@@ -1,4 +1,4 @@
-# Conatus - Digital Mindfulness
+# tm-philosophy-nudge
 
 > *"Conatus is the effort by which each thing strives to persevere in its being."*
 > — Baruch Spinoza, Ethics, Part III, Proposition 6
@@ -13,9 +13,9 @@ A Tampermonkey userscript that interrupts mindless scrolling with philosophical 
 
 # English
 
-## What is Conatus?
+## What is Philosophy Nudge?
 
-**Conatus** is a digital wellness tool disguised as philosophy. It periodically interrupts your browsing on social media and content platforms with thought-provoking questions based on Spinoza's three primary affects:
+**Philosophy Nudge** is a digital wellness tool disguised as philosophy. It periodically interrupts your browsing on social media and content platforms with thought-provoking questions based on Spinoza's three primary affects:
 
 | Affect | Meaning | Theme |
 |--------|---------|-------|
@@ -64,7 +64,7 @@ You need a userscript manager browser extension:
    - [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
 
 2. **Install the Script**:
-   - Click here to install: [Install Conatus](../../raw/main/script.js)
+   - Click here to install: [Install Philosophy Nudge](../../raw/main/script.js)
    - Or manually: Copy the contents of `script.js` and create a new script in Tampermonkey
 
 3. **Visit any supported website** and wait for the philosophical intervention!
@@ -92,7 +92,7 @@ When the modal appears:
 
 Spinoza believed that understanding our emotions is the path to freedom. Most of our actions are driven by passive affects (passiones) - emotions that happen TO us rather than arising FROM us.
 
-**Conatus** interrupts the passive consumption pattern of social media to ask:
+**Philosophy Nudge** interrupts the passive consumption pattern of social media to ask:
 - Is this serving my power to act?
 - Is this desire authentically mine?
 - Am I increasing or decreasing in perfection?
@@ -103,9 +103,9 @@ The intentional friction (holding to dismiss) prevents automatic dismissal and f
 
 # Türkçe
 
-## Conatus Nedir?
+## Philosophy Nudge Nedir?
 
-**Conatus**, felsefe kisvesi altında bir dijital wellness aracıdır. Sosyal medya ve içerik platformlarında gezinirken, sizi Spinoza'nın üç temel duygulanışına (affect) dayanan düşündürücü sorularla kesintiye uğratır:
+**Philosophy Nudge**, felsefe kisvesi altında bir dijital wellness aracıdır. Sosyal medya ve içerik platformlarında gezinirken, sizi Spinoza'nın üç temel duygulanışına (affect) dayanan düşündürücü sorularla kesintiye uğratır:
 
 | Duygulanış | Anlam | Tema |
 |------------|-------|------|
@@ -154,7 +154,7 @@ Bir userscript yönetici eklentisine ihtiyacınız var:
    - [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
 
 2. **Script'i Kurun**:
-   - Kurulum için tıklayın: [Conatus'u Kur](../../raw/main/script.js)
+   - Kurulum için tıklayın: [Philosophy Nudge'ı Kur](../../raw/main/script.js)
    - Veya manuel olarak: `script.js` içeriğini kopyalayıp Tampermonkey'de yeni bir script oluşturun
 
 3. **Desteklenen herhangi bir web sitesini ziyaret edin** ve felsefi müdahaleyi bekleyin!
@@ -182,7 +182,7 @@ Modal göründüğünde:
 
 Spinoza, duygularımızı anlamanın özgürlüğe giden yol olduğuna inanıyordu. Eylemlerimizin çoğu pasif duygulanışlar (passiones) tarafından yönlendirilir - BİZDEN kaynaklanmak yerine BİZE olan duygular.
 
-**Conatus**, sosyal medyanın pasif tüketim kalıbını kesintiye uğratarak şunları sorar:
+**Philosophy Nudge**, sosyal medyanın pasif tüketim kalıbını kesintiye uğratarak şunları sorar:
 - Bu eyleme gücüme hizmet ediyor mu?
 - Bu arzu gerçekten bana mı ait?
 - Yetkinlikte artıyor muyum, azalıyor muyum?

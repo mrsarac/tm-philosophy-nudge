@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Conatus - Digital Mindfulness
+// @name         Philosophy Nudge - Digital Mindfulness
 // @namespace    http://tampermonkey.net/
-// @version      7.0
+// @version      1.0.0
 // @description  A Spinoza-inspired digital mindfulness tool. Interrupts mindless scrolling with philosophical reflections. | Spinoza felsefesinden ilham alan dijital farkındalık aracı.
-// @author       Conatus Project
+// @author       Philosophy Nudge
 // @match        *://eksisozluk.com/*
 // @match        *://twitter.com/*
 // @match        *://x.com/*
@@ -19,8 +19,6 @@
 // @grant        GM_registerMenuCommand
 // @run-at       document-idle
 // @license      MIT
-// @homepageURL  https://github.com/anthropics/conatus
-// @supportURL   https://github.com/anthropics/conatus/issues
 // ==/UserScript==
 
 (function () {
