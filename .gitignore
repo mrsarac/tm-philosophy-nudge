@@ -21,4 +21,12 @@ npm-debug.log
 
 # Local development
 *.local
+*.local.md
 .env
+
+# Private notes (never pushed to GitHub)
+.notes/
+NOTES.md
+TODO.local.md
+BUGS.local.md
+IDEAS.local.md
