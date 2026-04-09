@@ -1,140 +1,46 @@
 # tm-philosophy-nudge
 
-> *"Conatus is the effort by which each thing strives to persevere in its being."*
-> — Baruch Spinoza, Ethics, Part III, Proposition 6
+"Conatus is the effort by which each thing strives to persevere in its being." — Spinoza
 
-A Tampermonkey userscript that interrupts mindless scrolling with philosophical reflections inspired by Spinoza's Ethics. Reclaim your digital agency.
+A lightweight Tampermonkey userscript that interrupts mindless scrolling with short philosophical nudges inspired by Spinoza's Ethics. Minimal, private-by-default, and intentionally frictional.
 
----
+Özet: Spinoza'dan ilham alan, dikkat dağıtıcı içerik tüketimini kesintiye uğratan küçük bir Tampermonkey userscripti. Basit, gizlilik odaklı ve kasıtlı sürtünme sağlar.
 
-## [Türkçe](#türkçe) | [English](#english)
+-----
 
----
+Quick install / Hızlı kurulum
 
-# English
+1) Open this URL in your browser and let Tampermonkey install:
 
-## What is Philosophy Nudge?
+   https://raw.githubusercontent.com/mrsarac/tm-philosophy-nudge/main/philosophy-nudge.user.js
 
-**Philosophy Nudge** is a digital wellness tool disguised as philosophy. It periodically interrupts your browsing on social media and content platforms with thought-provoking questions based on Spinoza's three primary affects:
+2) Or from Tampermonkey dashboard → Utilities → "Install from URL" and paste the raw link above.
 
-| Affect | Meaning | Theme |
-|--------|---------|-------|
-| **LAETITIA** | Joy / Increase of Power | Emerald Green |
-| **TRISTITIA** | Sadness / Decrease of Power | Melancholic Blue |
-| **CUPIDITAS** | Desire / Appetite | Amber Fire |
+Not: If you previously installed by copying/pasting into Tampermonkey, follow the migration steps in `UPGRADE_FROM_MANUAL.md` to avoid duplicate scripts.
 
-Each interruption presents a philosophical quote that challenges you to examine your current state of mind and whether your browsing serves your authentic will.
+-----
 
-## Features
+Why this exists / Neden?
 
-- **Philosophical Interruptions**: Random quotes from Spinoza's Ethics
-- **Beautiful Canvas Animations**: Breathing orbital circles representing the eternal drive to exist
-- **Hold-to-Dismiss Interaction**: Intentional friction prevents mindless clicking (hold for 2.5 seconds, or 1.2 seconds on low friction)
-- **Dual Language Support**: English and Turkish
-- **Customizable Settings**: Adjust friction level, language, and reset cooldown timer
-- **Accessibility Improvements**: Pointer events, keyboard support (Space/Enter), visible hold duration
-- **Auto-Update Ready**: Includes `@downloadURL` and `@updateURL` metadata for Tampermonkey refreshes
-- **60% Trigger Probability**: Not every page load triggers an interruption
-- **5-Minute Cooldown**: Prevents notification fatigue
+- Break automatic, reactive browsing.
+- Force a 1–2.5s intentional pause to increase awareness (configurable).
+- Offer short philosophical prompts rather than judgmental nagging.
 
-## Supported Websites
+Kısaca: Otomatik tüketimi böl, kısa bir farkındalık anı oluştur, kullanıcıyı yargılamadan sorgulamaya davet et.
 
-- twitter.com / x.com
-- youtube.com
-- reddit.com
-- instagram.com
-- linkedin.com
-- facebook.com
-- tiktok.com
-- eksisozluk.com
-- news.ycombinator.com (Hacker News)
+-----
 
-## Installation
+Behavior — Davranış
 
-### Prerequisites
-You need a userscript manager browser extension:
-- [Tampermonkey](https://www.tampermonkey.net/) (Recommended)
-- [Violentmonkey](https://violentmonkey.github.io/)
-- [Greasemonkey](https://www.greasespot.net/) (Firefox only)
+- Trigger probability: 60% per page load (configurable in code)
+- Cooldown: 5 minutes after showing (avoids fatigue)
+- Hold-to-dismiss: High (2.5s) / Low (1.2s)
+- Keyboard: Space / Enter works
+- Accessibility: Pointer events supported, role/button + aria-label added
 
-### Steps
+-----
 
-1. **Install Tampermonkey** for your browser:
-   - [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-   - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
-   - [Safari](https://apps.apple.com/app/tampermonkey/id1482490089)
-   - [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
-
-2. **Install the Script**:
-   - Click here to install: [Install Philosophy Nudge](../../raw/main/philosophy-nudge.user.js)
-   - Or manually: Copy the contents of `philosophy-nudge.user.js` and create a new script in Tampermonkey
-
-3. **Visit any supported website** and wait for the philosophical intervention!
-
-Note on migration:
-- If you previously installed the script by copying/pasting into Tampermonkey, see UPGRADE_FROM_MANUAL.md for a one-time clean migration to the new one-click install flow.
-
-## Usage
-
-### Menu Commands (Right-click Tampermonkey icon)
-
-| Command | Description |
-|---------|-------------|
-| **Friction: Low** | Reduces required hold time |
-| **Friction: High** | Default 2.5 second hold |
-| **Language: English** | Set language to English |
-| **Dil: Türkçe** | Set language to Turkish |
-| **Reset Timer** | Clear cooldown to trigger immediately |
-
-### Interaction
-When the modal appears:
-1. Read the philosophical quote
-2. Reflect on its meaning in your current context
-3. **Hold** the circular button (or press **Spacebar** / **Enter**) to dismiss
-   - High friction: 2.5 seconds
-   - Low friction: 1.2 seconds
-4. Return to browsing with renewed awareness
-
-## Philosophy Behind the Project
-
-Spinoza believed that understanding our emotions is the path to freedom. Most of our actions are driven by passive affects (passiones) - emotions that happen TO us rather than arising FROM us.
-
-**Philosophy Nudge** interrupts the passive consumption pattern of social media to ask:
-- Is this serving my power to act?
-- Is this desire authentically mine?
-- Am I increasing or decreasing in perfection?
-
-The intentional friction (holding to dismiss) prevents automatic dismissal and forces a moment of genuine reflection.
-
----
-
-# Türkçe
-
-## Philosophy Nudge Nedir?
-
-**Philosophy Nudge**, felsefe kisvesi altında bir dijital wellness aracıdır. Sosyal medya ve içerik platformlarında gezinirken, sizi Spinoza'nın üç temel duygulanışına (affect) dayanan düşündürücü sorularla kesintiye uğratır:
-
-| Duygulanış | Anlam | Tema |
-|------------|-------|------|
-| **LAETITIA** | Sevinç / Gücün Artışı | Zümrüt Yeşili |
-| **TRISTITIA** | Keder / Gücün Azalışı | Melankolik Mavi |
-| **CUPIDITAS** | Arzu / İştah | Kehribar Ateşi |
-
-Her kesinti, mevcut ruh halinizi ve gezinmenizin gerçek iradenize hizmet edip etmediğini sorgulamanızı sağlayan felsefi bir alıntı sunar.
-
-## Özellikler
-
-- **Felsefi Kesintiler**: Spinoza'nın Ethica'sından rastgele alıntılar
-- **Güzel Canvas Animasyonları**: Var olma çabasını temsil eden nefes alan yörünge daireleri
-- **Basılı-Tut Etkileşimi**: Bilinçsiz tıklamayı önleyen kasıtlı sürtünme (yüksek sürtünmede 2.5 saniye, düşükte 1.2 saniye)
-- **Çift Dil Desteği**: İngilizce ve Türkçe
-- **Özelleştirilebilir Ayarlar**: Sürtünme seviyesi, dil ve bekleme süresini ayarlayın
-- **Erişilebilirlik İyileştirmeleri**: Pointer event desteği, klavye desteği (Space/Enter), görünür basılı tutma süresi
-- **Otomatik Güncelleme Hazır**: Tampermonkey yenilemeleri için `@downloadURL` ve `@updateURL` metadata alanları eklendi
-- **%60 Tetikleme Olasılığı**: Her sayfa yüklemesi kesinti tetiklemez
-- **5 Dakika Bekleme Süresi**: Bildirim yorgunluğunu önler
-
-## Desteklenen Web Siteleri
+Supported sites / Desteklenen siteler (örnekler)
 
 - twitter.com / x.com
 - youtube.com
@@ -144,85 +50,59 @@ Her kesinti, mevcut ruh halinizi ve gezinmenizin gerçek iradenize hizmet edip e
 - facebook.com
 - tiktok.com
 - eksisozluk.com
-- news.ycombinator.com (Hacker News)
+- news.ycombinator.com
 
-## Kurulum
+(Not exhaustive — script matches by @match in the header)
 
-### Gereksinimler
-Bir userscript yönetici eklentisine ihtiyacınız var:
-- [Tampermonkey](https://www.tampermonkey.net/) (Önerilen)
-- [Violentmonkey](https://violentmonkey.github.io/)
-- [Greasemonkey](https://www.greasespot.net/) (Sadece Firefox)
+-----
 
-### Adımlar
+Settings (Tampermonkey menu)
 
-1. **Tampermonkey'i kurun**:
-   - [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-   - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
-   - [Safari](https://apps.apple.com/app/tampermonkey/id1482490089)
-   - [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
+- ⚙️ Friction: Low / High
+- 🌐 Language: English / Türkçe
+- 🔁 Reset Timer — clear cooldown and trigger sooner
 
-2. **Script'i Kurun**:
-   - Kurulum için tıklayın: [Philosophy Nudge'ı Kur](../../raw/main/philosophy-nudge.user.js)
-   - Veya manuel olarak: `philosophy-nudge.user.js` içeriğini kopyalayıp Tampermonkey'de yeni bir script oluşturun
+These are exposed as Tampermonkey menu commands (click Tampermonkey icon → Installed scripts → Philosophy Nudge → menu).
 
-3. **Desteklenen herhangi bir web sitesini ziyaret edin** ve felsefi müdahaleyi bekleyin!
+-----
 
-Geçiş notu:
-- Eğer script'i daha önce Tampermonkey'e kopyala-yapıştır ile kurduysan, yeni tek tık kurulum akışına temiz geçiş için `UPGRADE_FROM_MANUAL.md` dosyasına bak.
+Migration note / Geçiş
 
-## Kullanım
+If you added the script manually (copy/paste), remove the old instance from Tampermonkey before installing the .user.js version. See `UPGRADE_FROM_MANUAL.md` for exact steps.
 
-### Menü Komutları (Tampermonkey simgesine sağ tıklayın)
+Eğer script'i elle eklediyseniz, eski kopyayı Tampermonkey'den silin, sonra yeni .user.js'i kurun.
 
-| Komut | Açıklama |
-|-------|----------|
-| **Friction: Low** | Gerekli basılı tutma süresini azaltır |
-| **Friction: High** | Varsayılan 2.5 saniye |
-| **Language: English** | Dili İngilizce olarak ayarla |
-| **Dil: Türkçe** | Dili Türkçe olarak ayarla |
-| **Reset Timer** | Hemen tetiklemek için bekleme süresini sıfırla |
+-----
 
-### Etkileşim
-Modal göründüğünde:
-1. Felsefi alıntıyı okuyun
-2. Mevcut bağlamınızda ne anlama geldiğini düşünün
-3. Kapatmak için dairesel düğmeyi **basılı tutun** (veya **Space** / **Enter** tuşuna basın)
-   - Yüksek sürtünme: 2.5 saniye
-   - Düşük sürtünme: 1.2 saniye
-4. Yenilenmiş farkındalıkla gezinmeye devam edin
+Development / Geliştirme
 
-## Projenin Arkasındaki Felsefe
+- Repo: https://github.com/mrsarac/tm-philosophy-nudge
+- The live script file (raw): `philosophy-nudge.user.js`
+- To contribute: fork, make changes, open PR. Keep user-visible changes backwards-compatible.
 
-Spinoza, duygularımızı anlamanın özgürlüğe giden yol olduğuna inanıyordu. Eylemlerimizin çoğu pasif duygulanışlar (passiones) tarafından yönlendirilir - BİZDEN kaynaklanmak yerine BİZE olan duygular.
+-----
 
-**Philosophy Nudge**, sosyal medyanın pasif tüketim kalıbını kesintiye uğratarak şunları sorar:
-- Bu eyleme gücüme hizmet ediyor mu?
-- Bu arzu gerçekten bana mı ait?
-- Yetkinlikte artıyor muyum, azalıyor muyum?
+Troubleshooting / Sorun giderme
 
-Kasıtlı sürtünme (kapatmak için basılı tutma), otomatik kapatmayı önler ve gerçek bir düşünme anı yaratır.
+- Nothing appears: try Tampermonkey → Installed scripts → Reset Timer, or disable other userscripts that might block overlays
+- Duplicate interruptions: ensure you don't have two copies of the script installed
+- Auto-update not happening: verify Tampermonkey sees the `@updateURL` in the installed script header and can reach the raw URL
 
----
+-----
 
-## Contributing
+License / Lisans
 
-Contributions are welcome! Feel free to:
-- Add more philosophical quotes
-- Support additional languages
-- Add new supported websites
-- Improve the visual design
+MIT — see LICENSE
 
-## License
+-----
 
-MIT License - See [LICENSE](LICENSE) file for details.
+Changelog (short)
 
-## Acknowledgments
+- 1.1.0 — Accessibility improvements, pointer/keyboard support, auto-update metadata
+- 1.0.0 — Initial public release
 
-- **Baruch Spinoza** (1632-1677) for the philosophical foundation
-- All who seek to reclaim their digital agency
+-----
 
----
+If you want, I can also add a short GitHub Release and a PR template. Tell me which and I'll do it.
 
-*"The mind's highest good is the knowledge of God, and the mind's highest virtue is to know God."*
-— Spinoza, Ethics, Part IV, Proposition 28
+Eğer istersen README'ye küçük bir "Install" badge, release veya PR şablonu da ekleyebilirim. Ne istersin?
