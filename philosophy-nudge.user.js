@@ -4,8 +4,8 @@
 // @version      1.1.0
 // @description  A Spinoza-inspired digital mindfulness tool. Interrupts mindless scrolling with philosophical reflections. | Spinoza felsefesinden ilham alan dijital farkındalık aracı.
 // @author       Philosophy Nudge
-// @downloadURL  https://raw.githubusercontent.com/mrsarac/tm-philosophy-nudge/main/script.js
-// @updateURL    https://raw.githubusercontent.com/mrsarac/tm-philosophy-nudge/main/script.js
+// @downloadURL  https://raw.githubusercontent.com/mrsarac/tm-philosophy-nudge/main/philosophy-nudge.user.js
+// @updateURL    https://raw.githubusercontent.com/mrsarac/tm-philosophy-nudge/main/philosophy-nudge.user.js
 // @match        *://eksisozluk.com/*
 // @match        *://twitter.com/*
 // @match        *://x.com/*

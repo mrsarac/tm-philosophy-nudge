@@ -66,8 +66,8 @@ You need a userscript manager browser extension:
    - [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
 
 2. **Install the Script**:
-   - Click here to install: [Install Philosophy Nudge](../../raw/main/script.js)
-   - Or manually: Copy the contents of `script.js` and create a new script in Tampermonkey
+   - Click here to install: [Install Philosophy Nudge](../../raw/main/philosophy-nudge.user.js)
+   - Or manually: Copy the contents of `philosophy-nudge.user.js` and create a new script in Tampermonkey
 
 3. **Visit any supported website** and wait for the philosophical intervention!
 
@@ -158,8 +158,8 @@ Bir userscript yönetici eklentisine ihtiyacınız var:
    - [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
 
 2. **Script'i Kurun**:
-   - Kurulum için tıklayın: [Philosophy Nudge'ı Kur](../../raw/main/script.js)
-   - Veya manuel olarak: `script.js` içeriğini kopyalayıp Tampermonkey'de yeni bir script oluşturun
+   - Kurulum için tıklayın: [Philosophy Nudge'ı Kur](../../raw/main/philosophy-nudge.user.js)
+   - Veya manuel olarak: `philosophy-nudge.user.js` içeriğini kopyalayıp Tampermonkey'de yeni bir script oluşturun
 
 3. **Desteklenen herhangi bir web sitesini ziyaret edin** ve felsefi müdahaleyi bekleyin!
 
