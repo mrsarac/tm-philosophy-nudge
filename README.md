@@ -71,6 +71,9 @@ You need a userscript manager browser extension:
 
 3. **Visit any supported website** and wait for the philosophical intervention!
 
+Note on migration:
+- If you previously installed the script by copying/pasting into Tampermonkey, see UPGRADE_FROM_MANUAL.md for a one-time clean migration to the new one-click install flow.
+
 ## Usage
 
 ### Menu Commands (Right-click Tampermonkey icon)
@@ -87,7 +90,9 @@ You need a userscript manager browser extension:
 When the modal appears:
 1. Read the philosophical quote
 2. Reflect on its meaning in your current context
-3. **Hold** the circular button (or press **Spacebar**) for 2.5 seconds to dismiss
+3. **Hold** the circular button (or press **Spacebar** / **Enter**) to dismiss
+   - High friction: 2.5 seconds
+   - Low friction: 1.2 seconds
 4. Return to browsing with renewed awareness
 
 ## Philosophy Behind the Project
@@ -163,6 +168,9 @@ Bir userscript yönetici eklentisine ihtiyacınız var:
 
 3. **Desteklenen herhangi bir web sitesini ziyaret edin** ve felsefi müdahaleyi bekleyin!
 
+Geçiş notu:
+- Eğer script'i daha önce Tampermonkey'e kopyala-yapıştır ile kurduysan, yeni tek tık kurulum akışına temiz geçiş için `UPGRADE_FROM_MANUAL.md` dosyasına bak.
+
 ## Kullanım
 
 ### Menü Komutları (Tampermonkey simgesine sağ tıklayın)
@@ -179,7 +187,9 @@ Bir userscript yönetici eklentisine ihtiyacınız var:
 Modal göründüğünde:
 1. Felsefi alıntıyı okuyun
 2. Mevcut bağlamınızda ne anlama geldiğini düşünün
-3. Kapatmak için dairesel düğmeyi **basılı tutun** (veya **Space** tuşuna basın) - 2.5 saniye
+3. Kapatmak için dairesel düğmeyi **basılı tutun** (veya **Space** / **Enter** tuşuna basın)
+   - Yüksek sürtünme: 2.5 saniye
+   - Düşük sürtünme: 1.2 saniye
 4. Yenilenmiş farkındalıkla gezinmeye devam edin
 
 ## Projenin Arkasındaki Felsefe
