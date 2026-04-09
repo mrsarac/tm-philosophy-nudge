@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name         Philosophy Nudge - Digital Mindfulness
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.1.0
 // @description  A Spinoza-inspired digital mindfulness tool. Interrupts mindless scrolling with philosophical reflections. | Spinoza felsefesinden ilham alan dijital farkındalık aracı.
 // @author       Philosophy Nudge
+// @downloadURL  https://raw.githubusercontent.com/mrsarac/tm-philosophy-nudge/main/script.js
+// @updateURL    https://raw.githubusercontent.com/mrsarac/tm-philosophy-nudge/main/script.js
 // @match        *://eksisozluk.com/*
 // @match        *://twitter.com/*
 // @match        *://x.com/*
@@ -161,11 +163,14 @@
   const CONFIG = {
     frictionLevel: GM_getValue("frictionLevel", "high"), // low, high
     language: GM_getValue("language", "en"), // en, tr
-    holdDuration: 2500, // milliseconds | milisaniye
     probability: 60, // Display probability (%) | Gösterilme ihtimali (%)
     lastShown: GM_getValue("lastShown", 0),
     cooldown: 5 * 60 * 1000, // 5 minutes cooldown | 5 dakika bekleme süresi
   };
+
+  function getHoldDuration() {
+    return CONFIG.frictionLevel === "low" ? 1200 : 2500;
+  }
 
   // Helper to get current language text
   const getText = (key) => UI_TEXT[CONFIG.language][key];
@@ -178,7 +183,11 @@
    */
 
   function injectStyles(themeColor) {
+    const existingStyle = document.getElementById("conatus-style");
+    if (existingStyle) existingStyle.remove();
+
     const style = document.createElement("style");
+    style.id = "conatus-style";
     style.textContent = `
             @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;600&display=swap');
 
@@ -424,10 +433,10 @@
                     <div class="c-quote">"${quoteData.text}"</div>
                     <div class="c-source">— ${quoteData.source}</div>
 
-                    <div class="interaction-zone" id="c-trigger">
+                    <div class="interaction-zone" id="c-trigger" role="button" tabindex="0" aria-label="${getText("holdText")}">
                         <div class="ring-bg"></div>
                         <div class="ring-fill"></div>
-                        <div class="hold-text">${getText("holdText")}</div>
+                        <div class="hold-text">${getText("holdText")} · ${Math.round(getHoldDuration() / 100) / 10}s</div>
                     </div>
                 </div>
             `;
@@ -442,22 +451,32 @@
       this.fillRing = this.root.querySelector(".ring-fill");
       const trigger = this.root.querySelector("#c-trigger");
 
-      // Mouse Events
-      trigger.addEventListener("mousedown", () => this.startHold());
-      window.addEventListener("mouseup", () => this.endHold());
+      // Pointer Events
+      trigger.addEventListener("pointerdown", (e) => {
+        e.preventDefault();
+        this.startHold();
+      });
 
-      // Keyboard (Spacebar) Events
-      window.addEventListener("keydown", (e) => {
+      ["pointerup", "pointercancel", "pointerleave"].forEach((eventName) => {
+        trigger.addEventListener(eventName, () => this.endHold());
+      });
+
+      // Keyboard (Spacebar / Enter) Events
+      trigger.addEventListener("keydown", (e) => {
         if (
-          e.code === "Space" &&
+          (e.code === "Space" || e.code === "Enter") &&
           !this.isHolding &&
           this.root.classList.contains("active")
         ) {
+          e.preventDefault();
           this.startHold();
         }
       });
-      window.addEventListener("keyup", (e) => {
-        if (e.code === "Space") this.endHold();
+      trigger.addEventListener("keyup", (e) => {
+        if (e.code === "Space" || e.code === "Enter") {
+          e.preventDefault();
+          this.endHold();
+        }
       });
 
       // Show UI
@@ -465,32 +484,23 @@
     },
 
     startHold() {
+      if (this.isHolding) return;
+
       this.isHolding = true;
       this.holdStart = Date.now();
-      this.fillRing.style.transition = "none"; // Disable transition for JS control, or keep logic simple
+      this.fillRing.style.transition = "none";
 
-      // CSS Clip Path Logic for Circular Fill
-      // Using a simple interval to update the clip-path would be complex.
-      // Instead, we will use a conic-gradient trick via CSS variable or simple transition if possible.
-      // Let's use the Transition approach which is smoother for "Fill".
-
-      // Update: Better visual - Use Conic Gradient on the border or stroke-dashoffset.
-      // Since we used clip-path polygon in CSS, let's animate that via JS interval for precision.
+      const holdDuration = getHoldDuration();
+      const borderColor = getComputedStyle(this.fillRing).borderTopColor || "white";
 
       this.holdInterval = setInterval(() => {
         const elapsed = Date.now() - this.holdStart;
-        const progress = Math.min(elapsed / CONFIG.holdDuration, 1);
-
-        // Visual feedback: Calculate polygon for circle reveal
-        // Simplified: Just use opacity or scale for MVP, but master prompt requested Geometry.
-        // Let's use stroke-dashoffset logic simulation by changing clip-path based on degrees?
-        // Too complex for single block. Let's switch ring-fill to use Conic Gradient background.
-
-        // Dynamic style update for the ring
+        const progress = Math.min(elapsed / holdDuration, 1);
         const degrees = progress * 360;
-        this.fillRing.style.clipPath = `none`; // Reset clip path
-        this.fillRing.style.background = `conic-gradient(${this.fillRing.style.borderColor} ${degrees}deg, transparent 0)`;
-        this.fillRing.style.border = "none"; // Switch to fill mode
+
+        this.fillRing.style.clipPath = "none";
+        this.fillRing.style.background = `conic-gradient(${borderColor} ${degrees}deg, transparent ${degrees}deg 360deg)`;
+        this.fillRing.style.border = "none";
 
         if (progress >= 1) {
           this.complete();
@@ -499,17 +509,23 @@
     },
 
     endHold() {
+      if (!this.isHolding) return;
+
       this.isHolding = false;
       clearInterval(this.holdInterval);
-      // Reset Visuals
+      this.holdInterval = null;
+
+      const borderColor = getComputedStyle(this.fillRing).borderTopColor || "white";
       this.fillRing.style.background = "transparent";
-      this.fillRing.style.border = `4px solid ${this.fillRing.style.borderColor || "white"}`;
+      this.fillRing.style.border = `4px solid ${borderColor}`;
       this.fillRing.style.clipPath =
         "polygon(50% 50%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%)";
     },
 
     complete() {
+      this.isHolding = false;
       clearInterval(this.holdInterval);
+      this.holdInterval = null;
       this.engine.stop();
       this.root.classList.remove("active");
       setTimeout(() => {

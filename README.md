@@ -29,9 +29,11 @@ Each interruption presents a philosophical quote that challenges you to examine 
 
 - **Philosophical Interruptions**: Random quotes from Spinoza's Ethics
 - **Beautiful Canvas Animations**: Breathing orbital circles representing the eternal drive to exist
-- **Hold-to-Dismiss Interaction**: Intentional friction prevents mindless clicking (hold for 2.5 seconds)
+- **Hold-to-Dismiss Interaction**: Intentional friction prevents mindless clicking (hold for 2.5 seconds, or 1.2 seconds on low friction)
 - **Dual Language Support**: English and Turkish
 - **Customizable Settings**: Adjust friction level, language, and reset cooldown timer
+- **Accessibility Improvements**: Pointer events, keyboard support (Space/Enter), visible hold duration
+- **Auto-Update Ready**: Includes `@downloadURL` and `@updateURL` metadata for Tampermonkey refreshes
 - **60% Trigger Probability**: Not every page load triggers an interruption
 - **5-Minute Cooldown**: Prevents notification fatigue
 
@@ -119,9 +121,11 @@ Her kesinti, mevcut ruh halinizi ve gezinmenizin gerçek iradenize hizmet edip e
 
 - **Felsefi Kesintiler**: Spinoza'nın Ethica'sından rastgele alıntılar
 - **Güzel Canvas Animasyonları**: Var olma çabasını temsil eden nefes alan yörünge daireleri
-- **Basılı-Tut Etkileşimi**: Bilinçsiz tıklamayı önleyen kasıtlı sürtünme (2.5 saniye basılı tutun)
+- **Basılı-Tut Etkileşimi**: Bilinçsiz tıklamayı önleyen kasıtlı sürtünme (yüksek sürtünmede 2.5 saniye, düşükte 1.2 saniye)
 - **Çift Dil Desteği**: İngilizce ve Türkçe
 - **Özelleştirilebilir Ayarlar**: Sürtünme seviyesi, dil ve bekleme süresini ayarlayın
+- **Erişilebilirlik İyileştirmeleri**: Pointer event desteği, klavye desteği (Space/Enter), görünür basılı tutma süresi
+- **Otomatik Güncelleme Hazır**: Tampermonkey yenilemeleri için `@downloadURL` ve `@updateURL` metadata alanları eklendi
 - **%60 Tetikleme Olasılığı**: Her sayfa yüklemesi kesinti tetiklemez
 - **5 Dakika Bekleme Süresi**: Bildirim yorgunluğunu önler
 
